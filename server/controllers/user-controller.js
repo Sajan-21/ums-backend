@@ -94,7 +94,9 @@ exports.resetPassword = async function(req, res) {
         }
 
         let currentPassword = body.currentPassword;
+        console.log("currentPassword : ",currentPassword);
         let newPassword = body.newPassword;
+        console.log("newPassword : ",newPassword);
 
         // Correct bcrypt comparison: compare plaintext with hashed password
         let compare_Current_Password = bcrypt.compareSync(currentPassword, user.password);
